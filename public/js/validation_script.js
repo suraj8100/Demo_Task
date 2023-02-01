@@ -1,6 +1,9 @@
 jQuery('#survey-form').validate({
     rules:{
-        username:"required",
+        username:{
+            required:true,
+           
+        },
         password:{
             required:true,
             minlength:5,
@@ -8,7 +11,7 @@ jQuery('#survey-form').validate({
         email:{
             required:true,
             unique: true,
-            email:true,
+           
         },
         mob_no:{
             required:true,

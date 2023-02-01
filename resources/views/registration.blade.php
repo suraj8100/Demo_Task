@@ -21,7 +21,7 @@
       <label id="name-label" for="name"><strong>Password*</strong></label>
       <input type="password" name="password" id="password" placeholder="Put Your Password"  />
       <label id="email-label" for="email"><strong>Email*</strong></label>
-      <input type="email" name="email" id="email" placeholder="Please enter your email address"   />
+      <input type="email" name="email" id="email"  placeholder="Please enter your email address"   />
       <label id="number-label" for="number"><strong>Mobile No*</strong></label>
       <input type="text" name="mob_no" id="mob_no"  placeholder="Please enter your Mob No (+91)" />
     

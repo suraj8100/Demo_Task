@@ -32,3 +32,4 @@ function getCity(id)
         console.log(error);
     })
 }
+

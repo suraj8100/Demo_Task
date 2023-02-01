@@ -13,6 +13,7 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Session as FacadesSession;
+use Psy\CodeCleaner\ReturnTypePass;
 
 class RegisterController extends Controller
 {
@@ -45,6 +46,19 @@ class RegisterController extends Controller
         $data=table_countrie::all();
         return view('registration',compact('data'));
     }
+    public function checkdata($data)
+    {
+         $result=User::find($data);
+         if(!$result)
+         {
+            return "Email alredy exist";
+         }
+        else
+        {
+            return "";
+        }
+      
+    }
     public function getState($country_id)
     {
         return $subcat=table_state::where('country_id',$country_id)->get();
@@ -71,10 +85,15 @@ class RegisterController extends Controller
         Auth::logout();
         return redirect('login');
     }
-    public function dashboard(Request $request)
+    public function dashboard()
     {   
-      $data= Auth::user();
-      
+     $result = table_countrie::join('table_states','table_states.id','table_countries.id')
+    ->join('table_citys','table_citys.id','table_states.id')
+    ->join('users','users.city_id','table_citys.id')
+    ->where('users.id',Auth::id())
+    ->first();
+
+     return view('dashboard',compact('result'));
     }
 
 }

@@ -14,21 +14,23 @@
         <th>Username*</th>
         <th>Email</th>
         <th>Mobile No*</th>
-        <th>Country</th>
-        <th>State*</th>
         <th>City*</th>
+        <th>State*</th>
+        <th>Country</th>
     </tr>
     <tbody>
         <tr>
-            <td>1</td>
-            <td>2</td>
-            <td>3</td>
-            <td>4</td>
-            <td>5</td>
-            <td>6</td>
+      
+                <td>{{$result->user_name}}</td>
+                <td>{{$result->email}}</td>
+                <td>{{$result->mobile}}</td>
+                <td>{{$result->city_name}}</td>
+                <td>{{$result->state_name}}</td>
+                <td>{{$result->name}}</td>
+          
         </tr>
     </tbody>
-      </table>
+</table>
 </body>
 </html>
 
