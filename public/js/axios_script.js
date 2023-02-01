@@ -20,7 +20,8 @@ function coun()
 
 function getCity(id)
 {   
-    
+    document.getElementById('city').innerHTML="";
+    document.getElementById('city').innerHTML="Select your City here";
     axios.get(`/getData_city/${id}`)
     .then(function(response){
         console.log(response.data);
