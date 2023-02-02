@@ -46,19 +46,7 @@ class RegisterController extends Controller
         $data=table_countrie::all();
         return view('registration',compact('data'));
     }
-    public function checkdata($data)
-    {
-         $result=User::find($data);
-         if(!$result)
-         {
-            return "Email alredy exist";
-         }
-        else
-        {
-            return "";
-        }
-      
-    }
+   
     public function getState($country_id)
     {
         return $subcat=table_state::where('country_id',$country_id)->get();
