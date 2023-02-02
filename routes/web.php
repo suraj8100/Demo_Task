@@ -26,7 +26,7 @@ Route::post('/submit_information',[RegisterController::class,'store']);
 Route::post('/login_to_dash',[RegisterController::class,'log_to']);
 Route::post('logout',[RegisterController::class,'log_out']); 
 Route::get('/dashboard',[RegisterController::class,'dashboard']); 
-Route::get('/check_Email/{data}',[RegisterController::class,'checkdata']); 
+Route::get('/checkEmail/{data}',[RegisterController::class,'checkdata']); 
 Route::get('/login',function(){
     return view('login');
 });

@@ -10,12 +10,21 @@ jQuery('#survey-form').validate({
         },
         email:{
             required:true,
-            unique: true,
-           
+           remote:'/checkEmail/${data}',
         },
         mob_no:{
             required:true,
-            unique: true,
+        },
+        country:{
+            required:true,
+            
+        },
+        city:{
+            required:true,
+           
+        },
+        state:{
+            required:true,
         },
         
     },messages:{
@@ -28,7 +37,7 @@ jQuery('#survey-form').validate({
         email:{
             required:"Please Enter Your Email",
             email:"Please Enter Valid Email ",
-            unique:"This Mail Used Before"
+            remote:"This Mail Used Before"
         },
         mob_no:{
             required:"Please Enter Your Mob No",

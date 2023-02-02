@@ -21,7 +21,7 @@ function coun()
 function getCity(id)
 {   
     document.getElementById('city').innerHTML="";
-    document.getElementById('city').innerHTML="Select your City here";
+    document.getElementById('city').innerHTML=`<option>Select you city here</option>`;
     axios.get(`/getData_city/${id}`)
     .then(function(response){
         console.log(response.data);
@@ -33,4 +33,16 @@ function getCity(id)
         console.log(error);
     })
 }
+
+// function checkemail()
+// {   var data=document.getElementById('email').value;
+//     axios.get(`/checkEmail/${data}`)
+//     .then(function(response){
+//         console.log(response.data);
+//             document.getElementsByClassName('error').innerHTML+=response.data;
+//     })
+//     .catch(function(error){
+//         console.log(error);
+//     })
+// }
 
